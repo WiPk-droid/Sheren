@@ -65,7 +65,57 @@
         <button onclick="copyToClipboard()"><marquee><a>klik Salin Link Google</a></marquee></button>
     <P><span>PROGRAM SELESAI</span></p>
     <img href="QR.png">
-      <P><span>//NEW//</span></p>
+         <audio id="myAudio">
+  <source src="musik.mp3" type="audio/mpeg">
+          </audio>
+          
+    </center>
+        <div class="d1">
+            <center>
+            <button><a href="">neks</a></button>
+            <button onclick="salinLink"><a href="">klik saling google</a></button>
+        </center>
+        </div>
+<script>
+    // Mendapatkan elemen audio berdasarkan ID
+    const audio = document.getElementById("myAudio");
+
+    // Memulai pemutaran audio secara otomatis
+    audio.play();
+  </script>
+<style>
+  #video1{
+   width: 200px;
+   height: 140px;
+  }
+
+  
+</style>  
+
+<script>
+    function salinLink() {
+        // Mendapatkan URL saat ini
+        var url = window.location.href;
+
+        // Membuat elemen input tersembunyi untuk menyalin URL
+        var input = document.createElement('input');
+        input.value = url;
+        document.body.appendChild(input);
+
+        // Memilih isi dari input
+        input.select();
+        input.setSelectionRange(0, 99999); // Untuk perangkat mobile
+
+        // Menyalin ke clipboard
+        document.execCommand('copy');
+
+        // Menghapus elemen input setelah menyalin
+        document.body.removeChild(input);
+
+        // Menampilkan pemberitahuan
+        alert('Link berhasil disalin: ' + url);
+    }
+</script>
 <script>
 function copyToClipboard() {
   navigator.clipboard.writeText('https://wipk-droid.github.io/Sheren/');
