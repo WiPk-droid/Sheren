@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Membuat latar belakang abu-abu */
+    #background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: whitesmoke;
+      
+      margin-left: -5px;/* Warna abu-abu */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: whitesmoke;
+      font-size: 24px;
+      z-index: 0; /* Pastikan ini di bawah video */
+    }
+
+    /* Membuat video menutupi seluruh layar */
+    #backgroundVideo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: none; /* Sembunyikan video awalnya */
+      z-index: -1; /* Menempatkan video di bawah konten */
+    }
+
+    /* Tombol invisible yang menutupi seluruh layar */
+    #playButton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      margin: -2px;
+      background-color: rgba(0, 0, 0, 0); /* Tidak terlihat */
+      cursor: pointer;
+      z-index: 1; /* Tombol di depan video */
+    }
+
+    .color-changing-text {
+      font-size: 9px
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      animation: changeColor 17s infinite;
+      font-weight: bold;
+    }
+
+   .imge img{
+     position: flex;
+     border-radius: 100px;
+     width: 140px;
+     margin-top: 25px;
+     box-shadow: ghostwhite 2px 3px 3px;
+   }
+      
+    p{
+      widht: 10%;
+    }
+    @keyframes changeColor {
+      0% {
+        color: red;
+      }
+      25% {
+        color: blue;
+      }
+      50% {
+        color: green;
+      }
+      75% {
+        color: ;
+      }
+      100% {
+        color: orange;
+      }
+    }
+
+    img{
+      width: 200px;
+    }
+    
+    .img-art{
+      display: flex;
+      margin: 10px;
+      padding: 0px;
+    }
+    
+    .img-art img{
+      margin: 15px;
+      width: 150px;
+      border-radius: 3px;
+      box-shadow: ghostwhite 2px 3px 3px;
+    }
+    
+    button{
+      position: flex;
+      margin: 10px;
+    }
+
+  button :hover{
+    color: red;
+    background-color:  black;
+    border-radius: 10px;
+  }
+
+    span{
+      color: white
+    }
+    
+    h1{
+      font-size: 20px;
+      font-weight: 500px;
+      color: white;
+      
+    }
+    
+    .h2box h2{
+font-size: 20px;
+      
+      color: white;
+    }
+    
+    
+  </style>
+</head>
+<body> 
+
+  <div id="background">
+    Klik untuk memutar video
+  </div>
+
+  <!-- Video yang akan diputar -->
+  <video id="backgroundVideo" loop muted>
+    <source src="tik1.mp4" type="video/mp4">
+    Browser Anda tidak mendukung elemen video.
+  </video>
+
+  <!-- Audio untuk musik -->
+  <audio id="backgroundMusic" loop>
+    <source src="47.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <!-- Tombol invisible untuk memulai video dan musik -->
+  <button id="playButton"></button>
+
+
+ 
+    <center>
+      <div class="imge">
+      <img src="0baf51e0b2b8490d3eb566943e4feb85.jpg">
+</div>
+<div class="img-art">
+  <img src="k1.jpg">
+  <img src="k0.jpg">
+</div>
+
+<h1><span>MASALAHKU, MASALAH KANCAKU TULUNG DANG LALEKNO</span></h1>   
+<hr>
+<div class="h2box">
+      <h2>//saya tak diam//</h2>
+      </div>
+   <img src="QR.png"><br>
+         <button onclick="copyToClipboard()"><marquee><a> soalnya kamu pencari masalah/#&&/NGLUNJAK TAK IMBANGI</a></marquee></button>
+    </center>
+<style>
+  #video1{
+   width: 200px;
+   height: 140px;
+  }
+
+  
+</style>  
+  <script>
+    // Mendapatkan elemen
+    const background = document.getElementById("background");
+    const video = document.getElementById("backgroundVideo");
+    const audio = document.getElementById("backgroundMusic");
+    const playButton = document.getElementById("playButton");
+
+    // Menambahkan event listener untuk memutar video dan musik ketika layar ditekan
+    playButton.addEventListener("click", function() {
+      // Menghilangkan teks latar belakang abu-abu
+      background.style.display = "none";
+      
+      // Menampilkan video dan memutarnya
+      video.style.display = "block";
+      video.play().catch(error => {
+        console.log("Gagal memutar video:", error);
+      });
+      
+      // Memulai musik
+      audio.play().catch(error => {
+        console.log("Gagal memutar musik:", error);
+      });
+    });
+  </script>
+
+<script>
+        // Memastikan musik diputar otomatis
+        window.onload = function() {
+            var audio = document.getElementById("musik");
+            audio.play().catch(error => {
+                console.log("Pemutaran otomatis diblokir oleh browser, interaksi pengguna diperlukan.");
+            });
+        };
+    </script>
+
+<script>
+    function salinLink() {
+        // Mendapatkan URL saat ini
+        var url = window.location.href;
+
+        // Membuat elemen input tersembunyi untuk menyalin URL
+        var input = document.createElement('input');
+        input.value = url;
+        document.body.appendChild(input);
+
+        // Memilih isi dari input
+        input.select();
+        input.setSelectionRange(0, 99999); // Untuk perangkat mobile
+
+        // Menyalin ke clipboard
+        document.execCommand('copy');
+
+        // Menghapus elemen input setelah menyalin
+        document.body.removeChild(input);
+
+        // Menampilkan pemberitahuan
+        alert('Link berhasil disalin: ' + url);
+    }
+</script>
+
+    
+<script>
+function copyToClipboard() {
+  navigator.clipboard.writeText('https://wipk-droid.github.io/Sheren/');
+}
+</script>
+<style>
+button{
+  border-radius: 3px;
+  background-color: #808080;
+  height: 20px;
+}
+button a{
+  color: white;
+  font-weight: bold;
+  
+}
+
+</style>
+</body>
+</html>
