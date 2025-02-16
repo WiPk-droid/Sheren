@@ -183,6 +183,46 @@ font-size: 20px;
    <img src="QR.png"><br>
          <button onclick="copyToClipboard()"><marquee><a> soalnya kamu pencari masalah/#&&/NGLUNJAK TAK IMBANGI</a></marquee></button>
     </center>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <center>
+  <button onclick="playSound()">Putar Suara</button>
+  </center>
+  <script>
+    // Daftar file MP3 yang akan diputar secara bergantian
+    const sounds = [
+      new Audio('py1.mp3'),
+      new Audio('py2.mp3'),
+      new Audio('py3.mp3')
+    ];
+
+    let currentSoundIndex = 0;  // Menyimpan index suara yang sedang diputar
+
+    // Fungsi untuk memutar suara secara bergantian
+    function playSound() {
+      // Memainkan suara berdasarkan index saat ini
+      sounds[currentSoundIndex].play();
+
+      // Update index untuk suara berikutnya, dengan kembali ke 0 setelah mencapai akhir
+      currentSoundIndex = (currentSoundIndex + 1) % sounds.length;
+    }
+  </script>
+
+  
 <style>
   #video1{
    width: 200px;
